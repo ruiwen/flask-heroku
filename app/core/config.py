@@ -48,7 +48,7 @@ class Config(object):
         return {k: getattr(self, k) for k in dir(self) if k.isupper()}
 
     def iteritems(self):
-        return self.to_dict().iteritems()
+        return iter(self.to_dict().items())
 
     def get(self, key, default=None):
         return getattr(self, key, default)
@@ -60,7 +60,7 @@ class Config(object):
         args
             target        Target dictionary to absorb values from
         '''
-        for k, e in target.iteritems():
+        for k, e in target.items():
             if k.isupper():
                 if k not in self and not absorb:
                     continue
@@ -94,7 +94,7 @@ class Config(object):
         for f in files :
             try:
                 cfg = '/'.join([root, f])
-                execfile(cfg, {}, settings_dev)
+                exec(compile(open(cfg).read(), cfg, 'exec'), {}, settings_dev)
                 self.update(settings_dev)
             except IOError as e : #file don't exist, proceed as normal
                 pass

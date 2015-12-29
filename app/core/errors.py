@@ -22,7 +22,7 @@ class BaseError(Exception):
         self.code = code or self.code
         self.payload = payload
 
-        print self
+        print(self)
 
 
     def __str__(self):

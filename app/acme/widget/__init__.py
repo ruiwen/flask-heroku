@@ -3,7 +3,7 @@ __all__ = ['views']
 
 from flask import Blueprint
 
-import views
+from . import views
 
 widgets = Blueprint('widgets', __name__, static_folder='static', template_folder='templates')
 
