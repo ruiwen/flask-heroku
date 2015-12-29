@@ -9,7 +9,7 @@ from flask import jsonify
 from flask import render_template
 from flask.views import MethodView
 
-from acme.decorators import crossdomain
+from ..decorators import crossdomain
 
 class WidgetAPI(MethodView):
 

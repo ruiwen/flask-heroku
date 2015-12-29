@@ -7,7 +7,7 @@ from . import db
 
 app = Flask(__name__)
 app.config.from_object(settings.CONFIG)
-app.db = db.DB(app.config['DB_URI'])
+# app.db = db.DB(app.config['DB_URI'])
 
 # Blueprints
 for bp in settings.BLUEPRINTS:

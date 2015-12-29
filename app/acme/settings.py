@@ -5,7 +5,7 @@ import logging
 from app.core.settings import DevConfig, ProdConfig, TestConfig
 
 BLUEPRINTS = (
-    {"name": "acme.widget.widgets", "url_prefix": "/widgets"},
+    {"name": "app.acme.widget.widgets", "url_prefix": "/widgets"},
 )
 
 INSTALLED_EXTENSIONS = ()
