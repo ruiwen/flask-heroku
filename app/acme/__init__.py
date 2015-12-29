@@ -2,8 +2,8 @@ import os
 
 from flask import Flask
 
-import settings
-import db
+from . import settings
+from . import db
 
 app = Flask(__name__)
 app.config.from_object(settings.CONFIG)
